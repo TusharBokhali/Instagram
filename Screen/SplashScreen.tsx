@@ -1,16 +1,19 @@
+/* eslint-disable react-hooks/exhaustive-deps */
+/* eslint-disable quotes */
+/* eslint-disable react-native/no-inline-styles */
 import { View, Text, useColorScheme, StyleSheet, Image } from 'react-native'
 import React, { useEffect } from 'react'
 import { useNavigation } from '@react-navigation/native';
 export default function SplashScreen() {
-  const isDarkMode = useColorScheme() == 'dark';
+  const isDarkMode = useColorScheme() === 'dark';
   console.log(isDarkMode);
-    const {navigate,replace} = useNavigation<any>();
-  
-   useEffect(()=>{
-        setTimeout(()=>{
-          navigate('Home')
-        },2000)
-      },[])
+  const { replace } = useNavigation<any>();
+
+  useEffect(() => {
+    setTimeout(() => {
+      replace('TabNavigation');
+    }, 1000);
+  }, []);
   return (
     <View style={[styles.container, { backgroundColor: isDarkMode ? 'black' : 'white' }]}>
       <View>
@@ -21,9 +24,14 @@ export default function SplashScreen() {
           }}
         />
       </View>
-      <View style={{position:'absolute',bottom:80,gap:5}}>
-        <Text style={{color:isDarkMode ? 'white' : 'black',fontSize:16,opacity:0.5}}>From</Text>
-        <Text style={{color:'red',fontSize:18}}>Meta</Text>
+      <View style={{ position: 'absolute', bottom: 80, gap: 10 }}>
+        <Text style={{ color: isDarkMode ? 'white' : "#4E575E", fontSize: 16, opacity: 0.5, textAlign: 'center', fontFamily: 'Roboto-Bold' }}>from</Text>
+        <View style={{ flexDirection: 'row', alignItems: 'center', gap: 10 }}>
+          <Image source={require('../assets/Images/Meta.png.png')}
+            style={{ width: 42, height: 28 }}
+          />
+          <Text style={{ color: '#B8126B', fontSize: 18, fontWeight: '700' }}>Meta</Text>
+        </View>
       </View>
     </View>
   )
