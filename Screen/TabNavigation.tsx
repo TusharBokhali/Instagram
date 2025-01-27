@@ -8,7 +8,7 @@ import Search from './Search';
 import CreatePost from './CreatePost';
 import Reels from './Reels';
 import Profile from './Profile';
-import Entypo from 'react-native-vector-icons/Entypo';
+// import Entypo from 'react-native-vector-icons/Entypo';
 import FontAwesome from 'react-native-vector-icons/FontAwesome';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
@@ -16,10 +16,10 @@ import { Image, TouchableOpacity, useColorScheme } from 'react-native';
 
 export default function TabNavigation() {
   const Tab = createBottomTabNavigator();
-  const isDarkMode = useColorScheme() == 'dark';
+  const isDarkMode = useColorScheme() === 'dark';
   return (
     <Tab.Navigator initialRouteName='Home' screenOptions={{
-      headerShown: false, tabBarActiveTintColor: isDarkMode ? 'white' : 'black',tabBarHideOnKeyboard:true,tabBarShowLabel: false, tabBarStyle: {
+      headerShown: false, tabBarActiveTintColor: isDarkMode ? 'white' : 'black', tabBarHideOnKeyboard: true, tabBarShowLabel: false, tabBarStyle: {
         position: 'absolute',
         height: 60,
         paddingTop: 10,
