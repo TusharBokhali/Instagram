@@ -19,7 +19,7 @@ export default function TabNavigation() {
   const isDarkMode = useColorScheme() == 'dark';
   return (
     <Tab.Navigator initialRouteName='Home' screenOptions={{
-      headerShown: false, tabBarActiveTintColor: isDarkMode ? 'white' : 'black', tabBarShowLabel: false, tabBarStyle: {
+      headerShown: false, tabBarActiveTintColor: isDarkMode ? 'white' : 'black',tabBarHideOnKeyboard:true,tabBarShowLabel: false, tabBarStyle: {
         position: 'absolute',
         height: 60,
         paddingTop: 10,

@@ -6,7 +6,6 @@ import React, { useEffect } from 'react'
 import { useNavigation } from '@react-navigation/native';
 export default function SplashScreen() {
   const isDarkMode = useColorScheme() === 'dark';
-  console.log(isDarkMode);
   const { replace } = useNavigation<any>();
 
   useEffect(() => {

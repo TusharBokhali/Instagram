@@ -7,6 +7,7 @@ import TabNavigation from './Screen/TabNavigation';
 export default function App() {
   const Stack = createStackNavigator();
   const isDarkMode = useColorScheme() === 'dark';
+  
 
   return (
     <>
@@ -15,8 +16,8 @@ export default function App() {
         barStyle={isDarkMode ? "light-content" : "dark-content"}
         translucent={true}
       />
-      <NavigationContainer >
-        <Stack.Navigator initialRouteName='SplashScreen' screenOptions={{ headerShown: false }}>
+      <NavigationContainer  >
+        <Stack.Navigator initialRouteName='SplashScreen' screenOptions={{ headerShown: false,}} >
           <Stack.Screen name='SplashScreen' component={SplashScreen} />
           <Stack.Screen name='TabNavigation' component={TabNavigation} />
         </Stack.Navigator>
